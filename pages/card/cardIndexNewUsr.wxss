@@ -1,0 +1,33 @@
+/* pages/card/cardIndexNewUsr.wxss */
+page{
+    height: 100%;
+}
+.content_wrap{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.slide-image{  
+    width: 100%; 
+}
+.wrapper{
+    flex: 1;
+    background:#fff;
+}
+.wrapper .card_wrap{padding: 42rpx 30rpx;}
+
+.card_line{
+    display: flex;
+    padding-bottom: 35rpx;
+}
+.card_line .card_left{
+    flex:1;
+    padding-right: 15rpx;
+}
+.card_line .card_right{
+    flex:1;
+    padding-left: 15rpx;
+}
+
+.footer{background: #fff;height: 64rpx; line-height: 40rpx; text-align: center;}
+.footer navigator{display: inline-block; font-size: 28rpx; color: #999;}

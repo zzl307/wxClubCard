@@ -1,0 +1,64 @@
+/* pages/card/cardIndex.wxss */
+page{
+    height: 100%;
+}
+.content_wrap{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.slide-image{  
+    width: 100%; 
+}
+
+.wrapper{
+    flex: 1;
+    background:#fff;
+}
+.wrapper .card_wrap{padding: 70rpx 48rpx;}
+
+.card_line{
+    display: flex;
+    padding: 30rpx 0;
+    border-bottom: 2rpx solid #E4E4E4;
+}
+.card_line:last-child{
+    border-bottom: none;
+}
+.card_line .card_left{
+    flex:0 0 287rpx;
+    width: 259rpx;
+    height: 150rpx;
+}
+.card_line .card_left .icon_img{
+    width: 259rpx;
+    height: 150rpx;
+    border-radius: 12rpx;
+}
+
+.card_line .card_right{
+    flex:1;
+}
+.card_line .card_right .title{
+    font-size: 28rpx;
+}
+.card_line .card_right .time{
+    font-size: 24rpx;
+    color: #999999;
+    margin-top: 5rpx;
+}
+.card_line .card_right .money{
+    margin-top: 30rpx;
+    display: inline-block;
+    font-size: 24rpx;
+    color: #999999;
+}
+.card_line .card_right .money .ant{
+    display: inline-block;
+    font-size: 38rpx;
+    color: #EA5252;
+}
+
+.footer{background: #fff;height: 64rpx; line-height: 40rpx; text-align: center;}
+.footer .split{display: inline-block; padding: 0 18rpx; color: #999;}
+.footer navigator{display: inline-block; font-size: 28rpx; color: #999;}

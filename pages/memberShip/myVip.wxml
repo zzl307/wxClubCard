@@ -1,0 +1,59 @@
+<!--pages/memberShip/myVip.wxml-->
+<view class="vip_selector_wrap">
+  <view class="vip_swiper_wrap">
+    <swiper class="vip_swiper" next-margin="70rpx" previous-margin="70rpx"
+            indicator-dots="{{false}}" indicator-color="rgba(0,0,0,0.4)"
+            indicator-active-color="rgba(255,255,255,0.6)"
+            bindchange="swiperChange"
+    >
+      <block wx:for="{{card.list}}" wx:key="{{index}}">
+        <swiper-item >
+          <image src="{{item.bg}}" class="vip_image" mode="scaleToFill" />
+          <text class="card_name">{{item.levelName}}</text>
+          <text class="card_num">{{card.cardId}}</text>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="dot_list">
+        <block wx:for="{{card.list}}" wx:key="dot+{{index}}">
+          <view class="dot {{index===swiperCurrent? 'on' :'' }}"></view>
+        </block>
+    </view>
+  </view>
+</view>
+
+<view class="vip_detail_wrap">
+  <view class="vip_detail_title">
+    <view class="vip_title_left">
+      下一个等级:<text style="margin-left:10rpx;">{{ (card.list && card.list.length - 1 > swiperCurrent && card.list[swiperCurrent+1].levelName) || '无' }}</text>
+    </view>
+    <view wx:if="{{card.list[swiperCurrent].defaultUpLevelCondition}}" class="vip_title_right">
+        <text>{{card.list[swiperCurrent].defaultUpLevelCondition}}</text>
+    </view>
+    <view wx:else class="vip_title_right">
+            <text wx:if="{{card.upType == 1}}">累计消费金额满{{ card.list[swiperCurrent].upLevelCondition || '0' }}元可升到本级</text>
+            <text wx:elif="{{card.upType == 2}}">累计充值金额满{{ card.list[swiperCurrent].upLevelCondition || '0' }}元升到本级</text>
+            <text wx:elif="{{card.upType == 3}}">累计获取积分满{{ card.list[swiperCurrent].upLevelCondition || '0' }}可升到本级</text>
+            <text wx:else>-</text>
+        </view>
+  </view>
+
+  <view class="vip_detail_cont">
+    <view class="text_list">
+      <view class="text_title"><text>权益简介</text></view>
+      <view class="text_cont">{{card.list[swiperCurrent].levelName || '暂无说明'}}</view>
+    </view>
+    <view class="text_list">
+      <view class="text_title"><text>会员权益</text></view>
+      <view class="text_p">基本权益</view>
+      <view class="text_p grey">{{card.list[swiperCurrent].levelBaseRights || '暂无说明'}}</view>
+      <view class="text_p">附加权益</view>
+      <view class="text_p grey">{{card.list[swiperCurrent].levelAttachRights || '暂无说明'}}</view>
+    </view>
+
+  </view>
+
+
+</view>
+

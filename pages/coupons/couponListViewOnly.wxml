@@ -1,0 +1,19 @@
+<!--pages/coupons/couponListViewOnly.wxml-->
+<view class="coupon_list">
+  <view class="coupon_margin" wx:for="{{couponList}}" wx:key="card_{{index}}">
+    <Coupon bind:selectCouponEvent="selectCouponEvent" key="{{index}}" isShowCheck="{{false}}" couponColor="{{item.couponColor}}" info="{{item}}"></Coupon>
+  </view>
+</view>
+
+<view class='use_no' wx:if="{{useNoList && useNoList.length > 0}}">
+  <text class="left"></text>
+  <text class="title">不可用的优惠券</text>
+  <text class="right"></text>
+  <view class="on_off" bindtap="couponsOpenOff"><image class="{{couponsOpenOffState?'off_img':'open_img'}}" mode='aspectFit' src='../../resource/image/open.png'></image></view>
+</view>
+
+<view class="coupon_list" hidden="{{!couponsOpenOffState}}">
+  <view class="coupon_margin" wx:for="{{useNoList}}" wx:key="card_{{item.pkid}}">
+    <Coupon couponColor="disabled" disabled="true" info="{{item}}"></Coupon>
+  </view>
+</view>

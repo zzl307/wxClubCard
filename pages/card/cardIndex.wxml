@@ -1,0 +1,31 @@
+<!--pages/card/cardIndex.wxml-->
+<view class="content_wrap">
+  <swiper indicator-dots="{{indicatorDots}}" style='height:375rpx;' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" height="375" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='wrapper'>
+    <view class='card_wrap'>
+      <view class='card_line' wx:for="{{cardList}}" wx:key="{{index}}" data-id="{{item.cardId}}" data-spid="{{item.spid}}" bindtap='handleCardClick'>
+        <view class='card_left'>
+          <image class="icon_img" mode="aspectFill" src="{{item.bgPicUrl}}"></image>
+        </view>
+        <view class='card_right'>
+          <view class="title">{{item.brandName}}</view>
+          <view class="time">有效期至：{{item.expEndDate}}</view>
+          <view class="money">余额:
+            <view class="ant">￥{{item.balance}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='footer'>
+    <navigator url='/pages/help/help'>帮助中心</navigator>
+    <view class="split">|</view>
+    <navigator url='/pages/card/cardIndexNewUsr'>更多会员卡</navigator>
+  </view>
+</view>

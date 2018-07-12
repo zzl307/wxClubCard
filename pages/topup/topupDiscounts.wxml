@@ -1,0 +1,39 @@
+<!--pages/topup/topupDiscounts.wxml-->
+<view>
+    <view>
+        <List>
+            <ListItem>
+                <view slot="left">优惠金额</view>
+                <view slot="right">{{discount.discountAmount}}元</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.couponDisAmountDesc && (discount.couponDisAmountDesc.discountAmount>0)}}">
+                <view slot="left"><text class="item_desc">优惠券优惠金额</text></view>
+                <view slot="right">{{discount.couponDisAmountDesc.discountAmount}}元</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.couponDisAmountDesc && (discount.couponDisAmountDesc.discountAmount>0)}}">
+                <view slot="left"><text class="item_desc">已使用优惠券</text></view>
+                <view slot="right">{{discount.couponDisAmountDesc.couponName}}</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.activityDisAmountDesc && (discount.activityDisAmountDesc.discountAmount>0)}}">
+                <view slot="left"><text class="item_desc">活动优惠金额</text></view>
+                <view slot="right">{{discount.activityDisAmountDesc.discountAmount}}元</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.rightsDisAmountDesc && (discount.rightsDisAmountDesc.levelRightsDiscountRmb>0)}}">
+                <view slot="left"><text class="item_desc">权益折扣优惠金额</text></view>
+                <view slot="right">{{discount.rightsDisAmountDesc.levelRightsDiscountRmb}}元</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.rightsDisAmountDesc && (discount.rightsDisAmountDesc.increaseRmb>0)}}">
+                <view slot="left"><text class="item_desc">权益充值送金额</text></view>
+                <view slot="right">{{discount.rightsDisAmountDesc.increaseRmb}}元</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.rightsDisAmountDesc && (discount.rightsDisAmountDesc.fullSendBonus>0)}}">
+                <view slot="left"><text class="item_desc">权益充值送积分</text></view>
+                <view slot="right">{{discount.rightsDisAmountDesc.fullSendBonus}}分</view>
+            </ListItem>
+            <ListItem bottomline="{{false}}" wx:if="{{discount.rightsDisAmountDesc && (discount.rightsDisAmountDesc.reduceRmb>0)}}">
+                <view slot="left"><text class="item_desc">积分抵扣金额</text></view>
+                <view slot="right">{{discount.rightsDisAmountDesc.reduceRmb}}元</view>
+            </ListItem>
+        </List>
+    </view>
+</view>

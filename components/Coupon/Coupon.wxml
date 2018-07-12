@@ -1,0 +1,22 @@
+<!--components/Coupon/Coupon.wxml-->
+<view class="wrapper coupon-background-{{couponColor}}">
+    <view hidden="{{!disabled}}" class="disabled"></view>
+    <view class="coupon" bindtap="_selectCouponEvent">
+        <view class="content">
+            <view class="title">
+                <text class="text">{{info.couponName}}</text>
+                <view class="btn">{{info.typeName}}</view>
+            </view>
+            <text class="desc">使用条件:{{info.useCondition||''}}</text>
+            <text class="time">{{info.startDate}}-{{info.endDate}}</text>
+        </view>
+        <view class="split-line"></view>
+        <view class="tip">
+            <view class="checkbox" hidden="{{!isCheck}}"><image class="checkbox_img" mode='aspectFit' src='../../resource/image/checked.png'></image></view>
+            <text class="money">{{info.rightMoney}}<text class="money_symbol">{{info.rightMoneyUnit}}</text></text>
+            <view class="border-line">
+                <view class="border-circle"></view>
+            </view>
+        </view>
+    </view>
+</view>

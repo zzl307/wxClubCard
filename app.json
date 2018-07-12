@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/card/cardIndex",
+    "pages/topup/topupDiscounts",
+    "pages/topup/topupResult",
+    "pages/card/cardIndexNewUsr",
+    "pages/card/cardDetail",
+    "pages/coupons/couponList",
+    "pages/coupons/couponListViewOnly",
+    "pages/topup/topup",
+    "pages/activity/activity",
+    "pages/memberShip/myVip",
+    "pages/records/transactionList",
+    "pages/records/transactionDetail",
+    "pages/records/pointsList",
+    "pages/topup/pay",
+    "pages/help/help",
+    "pages/help/eGuide",
+    "pages/redirect/redirect",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "旺旺会员卡",
+    "navigationBarTextStyle": "black"
+  }
+}

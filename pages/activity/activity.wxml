@@ -1,0 +1,69 @@
+<!--pages/activity.wxml-->
+<view class="activity_wrap">
+    <view class="content">
+        <view class="content_wrap">
+            <view class="content_bg">
+                <image class="content_bg_img" mode="aspectFill" src="../../resource/image/activity-bg.png"></image>
+            </view>
+            <view class="activity_content">
+                <view wx:if="{{activity.activityType == 1}}">
+                    <view class="activity_item" wx:if="{{activity.activityType == 1}}">
+                        <view class="item_icon">
+                            <image class="item_icon_img" mode="aspectFill" src="../../resource/image/give.png"></image>
+                        </view>
+                        <view class="text">
+                            <view wx:for="{{activity.rule}}" wx:key="give_{{index}}">充值
+                                <text class="blue">满{{item.conditionAmount}}元，赠送{{item.discountVar}}元</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="split_line_wrap">
+                        <view class="split_line"></view>
+                    </view>
+                </view>
+
+                <view wx:elif="{{activity.activityType == 2}}">
+                    <view class="activity_item">
+                        <view class="item_icon">
+                            <image class="item_icon_img" mode="aspectFill" src="../../resource/image/reduction.png"></image>
+                        </view>
+                        <view class="text">
+                            <view wx:for="{{activity.rule}}" wx:key="reduction_{{index}}">充值
+                                <text class="blue">满{{item.conditionAmount}}元，减少{{item.discountVar}}元</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="split_line_wrap">
+                        <view class="split_line"></view>
+                    </view>
+                </view>
+
+                <view wx:elif="{{activity.activityType == 3}}">
+                    <view class="activity_item">
+                        <view class="item_icon">
+                            <image class="item_icon_img" mode="aspectFill" src="../../resource/image/discount.png"></image>
+                        </view>
+                        <view class="text" wx:for="{{activity.rule}}" wx:key="discount_{{index}}">
+                            <view>充值
+                                <text class="blue">满{{item.conditionAmount}}元{{item.discountVar}}折</text>
+                            </view>
+                            <view wx:if="{{item.discountMaxAmount>0}}">单笔订单最高折扣
+                                <text class="blue">{{item.discountMaxAmount}}元</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="split_line_wrap">
+                        <view class="split_line"></view>
+                    </view>
+                </view>
+
+                <view class="footer">
+                    <text>活动规则:{{activity.ruleStr}}</text>
+                </view>
+                <view class="footer_time">
+                    <text>活动时间:{{activity.beginDate}}-{{activity.endDate}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

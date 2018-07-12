@@ -1,0 +1,27 @@
+<!--pages/card/cardIndexNewUsr.wxml首页-->
+<view class="content_wrap">
+  <swiper indicator-dots="{{indicatorDots}}" style='height:375rpx;' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" height="375" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='wrapper'>
+    <view class='card_wrap'>
+      <view class='card_line' wx:for='{{cardInfoList}}' wx:for-index="lineIndex" wx:for-item="lineItem" wx:key='cardline_{{lineIndex}}'>
+        <view wx:for='{{lineItem}}' wx:for-index="columnIndex" wx:for-item="columnItem" wx:key='cardcolumn_{{columnIndex}}'>
+          <view class="{{(columnIndex%2==0)?'card_left':'card_right'}}">
+            <GetCard bind:getCardEvent="getCardEvent" info="{{columnItem}}"></GetCard>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class='footer'>
+    <navigator url='/pages/help/help'>帮助中心</navigator>
+  </view>
+
+</view>

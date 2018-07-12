@@ -1,0 +1,4 @@
+<!--components/List/list.wxml-->
+<view class="swift_list">
+  <slot></slot>
+</view>

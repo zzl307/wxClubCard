@@ -1,0 +1,54 @@
+<!--pages/topup/topupResult.wxml-->
+<!--充值成功-->
+<block wx:if="{{order.state == 4}}">
+    <view class="result_top">
+        <view class="result_top_icon"><image class="result_top_icon_img" mode="aspectFill" src="../../resource/image/recharge-success.png"></image></view>
+        <view class="result_top_msg"><text>充值成功</text></view>
+    </view>
+
+    <view>
+        <List>
+            <ListItem>
+                <view slot="left" >支付金额:<text class="amount_padin">{{order.payAmount || '0.00'}}元</text></view>
+                <view slot="right"><text class="amount_text">到帐金额:</text><text class="amount_padin">{{order.tradeAmount || '0.00'}}元</text></view>
+            </ListItem>
+            <ListItem wx:if="{{order.increaseBonus>0}}">
+                <view slot="left" >积分奖励</view>
+                <view slot="right">{{order.increaseBonus || '0.00'}}</view>
+            </ListItem>
+            <ListItem arrow="right" wx:if="{{order.discountAmount>0}}">
+                <view slot="left" >优惠金额</view>
+                <view slot="right" bindtap="topupDiscounts">{{order.discountAmount || '0.00'}}元</view>
+            </ListItem>
+        </List>
+        <view class="get_coupon" hidden="{{!(receiveCoupon.length>0)}}">
+          恭喜你获得一张优惠券，<text class="get_blue_text" bindtap="getCoupon">立即领取</text>
+        </view>
+    </view>
+
+    <view class="result_bottom">
+        <button class="swift_button" hover-class="swift_button_hover" bindtap="jumpToBack">完成</button>
+    </view>
+</block>
+
+<!--充值失败-->
+<block wx:elif="{{order.state == 3}}">
+  <view class="result_top">
+    <view class="result_top_icon"><icon type="clear" size="45" color="#3C4FA0"/></view>
+    <view class="result_top_msg"><text>充值失败</text></view>
+  </view>
+  <view class="result_bottom">
+    <button class="swift_button" hover-class="swift_button_hover" bindtap="jumpToBack">返回</button>
+  </view>
+</block>
+
+<!--充值超时-->
+<block wx:else>
+  <view class="result_top">
+    <view class="result_top_icon"><icon type="warn" size="45" color="#3C4FA0"/></view>
+    <view class="result_top_msg"><text>充值中，请稍等！</text></view>
+  </view>
+  <view class="result_bottom">
+    <button class="swift_button" hover-class="swift_button_hover" bindtap="handleRefresh">刷新</button>
+  </view>
+</block>

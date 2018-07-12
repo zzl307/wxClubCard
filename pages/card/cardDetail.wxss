@@ -1,0 +1,52 @@
+/* pages/card/cardDetail.wxss */
+.blue_bg{padding-top: 100rpx; background: #3C4FA0;}
+.card_wrap{margin: 0 24rpx; height: 464rpx; position: relative;}
+.card_wrap .card{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.customer_info{height: 300rpx; margin: 0 20rpx; border-bottom: 1px solid rgba(151, 151, 151, 0.14); position: relative; overflow: hidden; text-align: center;}
+.customer_info .logo{width: 100rpx; height: 100rpx; margin: 40rpx auto 20rpx;}
+.customer_info .logo image{width: 100%; height: 100%;border-radius:100rpx;}
+.customer_info text{font-size: 34rpx; line-height: 48rpx; color: #333;}
+.customer_info .nav_wrap{margin-top: 10rpx;}
+.customer_info .nav_wrap navigator{display: inline-block; font-size: 28rpx; line-height: 40rpx; color: #999;}
+.customer_info .nav_wrap text{font-family: '宋体'; vertical-align: middle; color: #999; margin-left: 10rpx;}
+.index_btn_wrap{margin-top: 32rpx;}
+.w250{width: 250rpx;}
+.member_info{height: 158rpx; background: #4D62BE; box-shadow: 0 2px 4px rgba(0, 0, 0, .5); margin-top: -20rpx; position: relative; display: -webkit-box; -webkit-box-align: center;}
+.member_info .item{width: 1rpx; -webkit-box-flex: 1; text-align: center; position: relative;}
+.member_info .split{width: 1rpx; height: 30rpx; background: rgba(255, 255, 255, .4);}
+.member_info .item .item_top{font-size: 32rpx; line-height: 45rpx; color: #fff;}
+.member_info .item .item_btm{font-size: 28rpx; line-height: 40rpx; color: rgba(255, 255, 255, .3);}
+.member_info .item .item_btm text{margin-left: 10rpx;}
+.member_service{display: -webkit-box; margin-top: 60rpx;}
+.member_service .item{width: 1rpx; -webkit-box-flex: 1; text-align: center;}
+.member_service .item image{width: 54rpx; height: 54rpx;}
+.member_service view{font-size: 28rpx; line-height: 40rpx; color: #333; margin-top: 30rpx;}
+
+.help_center{position: absolute; left: 0; right: 0; bottom: 32rpx; font-size: 28rpx; line-height: 40rpx; color: #999; text-align: center;}
+.help_center navigator{display: inline-block;}
+
+/* pages/card/newMember.wxss */
+.blue_bg_new{height: 220rpx;background: #3C4FA0;}
+.card_wrap_new{margin: -140rpx 24rpx 0; height: 464rpx; position: relative;}
+.card_wrap_new .card{position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+.customer_info_new{
+  height: 300rpx; margin: 0 20rpx; border-bottom: 1px solid rgba(151, 151, 151, 0.14);
+  position: relative; overflow: hidden;    text-align: center;
+}
+.customer_info_new .logo{width: 166rpx; height: 166rpx; margin: 40rpx auto 22rpx;}
+.customer_info_new .logo image{width: 100%; height: 100%;border-radius: 166rpx;}
+.customer_info_new text{font-size: 34rpx; line-height: 48rpx; color: #333;}
+.index_btn_wrap{margin-top: 32rpx;}
+.w250{width: 250rpx;}
+.card_intro{
+  margin-top: 70rpx; text-align: center;
+  position:absolute;left:0;right:0;bottom:100rpx;top:500rpx;overflow: auto;
+}
+.card_intro .intro_title{display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center;}
+.card_intro .intro_title text{margin: 0 60rpx; font-size: 28rpx; line-height: 40rpx;}
+.card_intro .intro_title .line{width: 100rpx; height: 2rpx; background: #E4E4E4;}
+.card_intro .intro_con{margin-top: 12rpx;padding:0 160rpx;}
+.card_intro .intro_con .row{font-size: 28rpx; line-height: 40rpx; color: #999;}
+.mt56{margin-top: 56rpx;}
+.help_center{position: absolute; left: 0; right: 0; bottom: 32rpx; font-size: 28rpx; line-height: 40rpx; color: #999; text-align: center;}
+.help_center navigator{display: inline-block;}

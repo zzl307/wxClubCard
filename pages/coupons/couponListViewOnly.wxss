@@ -1,0 +1,51 @@
+/* pages/coupons/couponList.wxss */
+.coupon_list{
+  background: #fff;
+  padding: 20rpx 30rpx;
+}
+.coupon_margin{
+  margin-bottom: 20rpx;
+}
+
+.use_no{
+  background: #fff;
+  text-align: center;
+}
+.use_no .title{
+  color: #999;
+  font-size: 28rpx;
+  position: relative; 
+  padding: 0 20rpx;
+  line-height: 40rpx;
+}
+.use_no .left{
+  display: inline-block;
+  width:100rpx;
+  height:2rpx;
+  background:#E4E4E4;
+  vertical-align: middle;
+}
+.use_no .right{
+  display: inline-block;
+  width:100rpx;
+  height:2rpx;
+  background:#E4E4E4;
+  vertical-align: middle;
+}
+.use_no .on_off{
+  display: inline-block;
+  position: absolute;
+  right: 30rpx;
+}
+.use_no .on_off .open_img{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}
+
+.use_no .on_off .off_img{
+  transform: rotate(-180deg);
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+}

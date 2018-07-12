@@ -1,0 +1,47 @@
+/* pages/records/transactionDetail.wxss */
+.list{
+  background: #fff;
+  padding: 30rpx 30rpx 24rpx 30rpx;
+}
+.list_title{
+  display: -webkit-box;
+  padding: 5rpx 3rpx 21rpx 3rpx;
+  border-bottom: 2rpx solid #E4E4E4;
+  line-height: 50rpx;
+}
+.list_title .title{
+  display:block;
+  -webkit-box-flex: 1;
+  text-align: left;
+  font-size: 36rpx; 
+  color: #000;
+}
+.list_title .title_num{
+  display: block;
+  -webkit-box-flex: 1;
+  text-align: right;
+  font-size: 38rpx; 
+  color: #000;
+}
+.detail_bg{
+  padding-top: 15rpx;
+}
+.detail_list{
+  display: -webkit-box;
+  padding: 0rpx 3rpx;
+  line-height: 56rpx;
+}
+.detail_list .left{
+  display:block;
+  -webkit-box-flex: 1;
+  text-align: left;
+  font-size: 28rpx; 
+  color: #999;
+}
+.detail_list .right{
+  display: block;
+  -webkit-box-flex: 1;
+  text-align: right;
+  font-size: 28rpx; 
+  color: #999;
+}

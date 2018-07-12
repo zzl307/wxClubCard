@@ -1,0 +1,9 @@
+<!--pages/help/help.wxml-->
+<view class='help_center'>
+  <view class='row'>1.填写资料免费办理会员卡</view>
+  <view class='row'>2.会员个人资料变更保存后无法修改</view>
+  <view class='row'>3.VIP卡不得转借他人使用，非卡主本人用卡我司有权拒绝使用</view>
+  <view class='row'>4.会员生日可享受免费礼品</view>
+  <view class='row'>5.积分专项礼品，1万积分可兑换100元礼品</view>
+  <view class='row'>6.更多会员活动请关注微信公众号</view>
+</view>

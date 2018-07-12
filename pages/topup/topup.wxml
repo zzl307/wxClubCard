@@ -1,0 +1,103 @@
+<!--pages/topup/topup.wxml-->
+<view class="card_activity" hidden="{{!(activity.activityId && activity.state==3)}}" bindtap="goActivity">
+  <text class="left">{{activity.name}}</text>
+  <view class="right">
+    <view class="card_right">
+      <image wx:if="{{activity.activityType == 1}}" class="card_activity_img" mode="aspectFill" src="../../resource/image/give.png"></image>
+      <image wx:elif="{{activity.activityType == 2}}" class="card_activity_img" mode="aspectFill" src="../../resource/image/reduction.png"></image>
+      <image wx:elif="{{activity.activityType == 3}}" class="card_activity_img" mode="aspectFill" src="../../resource/image/discount.png"></image>
+      <image class="card_right_img" mode="aspectFill" src="../../resource/image/guide-red.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="card_title">
+  <view class="left">
+    <image class="card_title_img" mode="aspectFill" src="../../resource/image/card.png"></image>
+  </view>
+  <text class="right">请选择充值金额</text>
+</view>
+
+<view class="card_wrap">
+  <view class="card_list" >
+    <view class="{{0===cardSelected ? 'on': '' }}" bindtap="handleConfigClick" data-index="{{0}}" data-amount="{{config.cardAmount1}}">{{config.cardAmount1 || 0}}元</view>
+    <view class="check_on" hidden="{{!(0===cardSelected)}}"></view>
+  </view>
+  <view class="card_list" >
+    <view class="{{1===cardSelected ? 'on': '' }}" bindtap="handleConfigClick" data-index="{{1}}" data-amount="{{config.cardAmount2}}">{{config.cardAmount2 || 0}}元</view>
+    <view class="check_on" hidden="{{!(1===cardSelected)}}"></view>
+  </view>
+  <view class="card_list" >
+    <view class="{{2===cardSelected ? 'on': '' }}" bindtap="handleConfigClick" data-index="{{2}}" data-amount="{{config.cardAmount3}}">{{config.cardAmount3 || 0}}元</view>
+    <view class="check_on" hidden="{{!(2===cardSelected)}}"></view>
+  </view>
+  <view class="card_list" >
+    <view class="{{3===cardSelected ? 'on': '' }}" bindtap="handleConfigClick" data-index="{{3}}" data-amount="{{config.cardAmount4}}">{{config.cardAmount4 || 0}}元</view>
+    <view class="check_on" hidden="{{!(3===cardSelected)}}"></view>
+  </view>
+  <view class="card_list" >
+    <view class="{{4===cardSelected ? 'on': '' }}" bindtap="handleConfigClick" data-index="{{4}}" data-amount="{{config.cardAmount5}}">{{config.cardAmount5 || 0}}元</view>
+    <view class="check_on" hidden="{{!(4===cardSelected)}}"></view>
+  </view>
+  <view class="card_list">
+    <input class="{{otherAmountFoucs===true ? 'on' : '' }}" type="digit" placeholder-style="color:#333333" data-min="{{config.fcustomCardAmountMin}}" data-max="{{config.availableMax}}"
+        bindfocus="handleAmountFocus" bindblur="handleOtherAmountBlur" bindinput="handleOtherAmountInput"
+        value="{{otherAmountValue}}"
+    />
+    <view class="check_on" hidden="{{!(otherAmountFoucs===true)}}"></view>
+  </view>
+</view>
+
+<view class="card_coupon">
+  <List>
+    <ListItem arrow="right">
+      <view slot="left">优惠券</view>
+      <view slot="right" bindtap="selectCoupons">{{counponSeleccted.couponId?counponSeleccted.useCondition:'请选择优惠券'}}</view>
+    </ListItem>
+    <ListItem wx:if="{{config.bonusDeduction && config.bonusDeduction.rightType == 2}}">
+      <view slot="left">积分抵扣金额
+        <text class="listItem_desc">{{config.bonusDeduction.costBonusUnit}}积分抵扣{{config.bonusDeduction.reduceMoney}}元</text>
+      </view>
+      <view slot="right" bindtap="integralSwitchChange">
+        <view class="switch_wrap">
+          <image class="switch_img" mode="aspectFill" src="../../resource/image/{{switchChecked?'switch-on.png':'switch-off.png'}}"></image>
+        </view>
+      </view>
+    </ListItem>
+    <ListItem hidden="{{!switchChecked}}">
+      <view slot="left">
+        <input type="number" class="intergral_input" data-min="1" data-max="{{config.bonusDeduction.maxReduceBonus}}"
+        bindblur="userBonusBlur" bindinput="userBonusInput"
+          value="{{userBonusValue}}" />
+          <text class="listItem_desc">剩余积分{{config.bonus}}</text>
+      </view>
+      <view slot="right" style="line-height:58rpx;">-{{discount.discountBonusAmount}}</view>
+    </ListItem>
+    <ListItem wx:if="{{discount.discountCouponAmount>0}}">
+      <view slot="left">优惠券优惠</view>
+      <view slot="right" wx:if="{{counponSeleccted.type==3}}">+{{discount.discountCouponAmount}}</view>
+      <view slot="right" wx:else>-{{discount.discountCouponAmount}}</view>
+    </ListItem>
+    <ListItem arrow="right">
+      <view slot="left">{{config.levelName||''}}优惠</view>
+      <view slot="right" bindtap="goMyVIP">+{{discount.discountRightAmount||'0.00'}}</view>
+    </ListItem>
+    <ListItem wx:if="{{activity.activityType}}">
+      <view slot="left" wx:if="{{activity.activityType == 1}}">满赠优惠</view>
+      <view slot="left" wx:elif="{{activity.activityType == 2}}">满减优惠</view>
+      <view slot="left" wx:elif="{{activity.activityType == 3}}">满折优惠</view>
+      <view slot="right" wx:if="{{activity.activityType == 1}}">+{{discount.discountActivityAmount||'0.00'}}</view>
+      <view slot="right" wx:else>-{{discount.discountActivityAmount||'0.00'}}</view>
+    </ListItem>
+  </List>
+</view>
+
+<view class="topup_check">
+  <view class="swift_checkbox" bindtap="toggleCheck"><view hidden="{{!checked}}"><image class="swift_checkbox_img" mode="aspectFit" src="../../resource/image/check_on.png"></image></view></view>
+  <view class="swift_checkbox_txt">已阅读并同意<text style="color:#4F5EFF;" bindtap="jumpToGuide">《电子卡指引》</text></view>
+</view>
+
+<view class="swift_button_wrap">
+  <button class="swift_button" hover-class="swift_button_hover" bindtap="handleRechargeOrder">支付{{discount.payAmount || '0.00'}}元</button>
+</view>
+

@@ -1,0 +1,27 @@
+/* pages/topup/pay.wxss */
+page{background:#3C4FA0;}
+.code_section{background:#ffffff;margin:30rpx;height:750rpx;border-radius:6rpx;box-shadow:0 0 1rpx rgba(0, 0, 0, 0.3);}
+.no_enough_balance{display:-webkit-box;-webkit-box-align: center;-webkit-box-pack: center;height:100%;}
+.non_enough_cont .no_enough_msg{font-size:28rpx;color:#999999;}
+.no_enough_btn{margin-top:23rpx;}
+
+.enough_balance{height:100%;position:relative;}
+.scan_number{font-size:28rpx;text-align:center;padding-top:38rpx;letter-spacing: 10rpx;}
+.scan_barcode{height:170rpx;text-align:center;padding:0 50rpx;margin-top:12rpx;}
+.scan_barcode image{height:170rpx;width:100%;}
+.scan_barcode canvas{height:170rpx;margin:0 auto;}
+.scan_qrcode{height:300rpx;text-align:center;margin-top:50rpx;}
+.scan_qrcode image{width:300rpx;height:300rpx;}
+.scan_qrcode canvas{width:300rpx;height:300rpx;margin:0 auto;}
+.scan_card_info{position:absolute;bottom:0;left:30rpx;right:30rpx;border-top:1rpx solid #E4E4E4;}
+
+.refresh_wrap{font-size:28rpx;text-align:center;color:#9DA7CF;}
+.refresh_wrap .btn_refresh{
+    display:inline-block;vertical-align: middle;
+    width:30rpx;height:32rpx;margin-right:10rpx;position:relative;top:1rpx;
+}
+.refresh_wrap .btn_refresh image{width:30rpx;height:32rpx;vertical-align: top;}
+.refresh_wrap text{display:inline-block;vertical-align: middle;}
+.pay_detail{font-size:28rpx;color:#CED2E7;text-align:center;margin-top:87rpx;}
+.pay_detail image{width:13rpx;height:22rpx;margin-left:10rpx;}
+.provider{position:absolute;bottom:30rpx;left:0;right:0;text-align:center;font-size:24rpx;color:#353849;}

@@ -1,0 +1,44 @@
+<!--pages/topup/pay.wxml-->
+<view class="code_section">
+  <view class="no_enough_balance" wx:if="{{!card.flag}}">
+    <view class="non_enough_cont">
+      <view class="no_enough_msg">余额不足，请先充值!</view>
+      <view class="no_enough_btn">
+        <button class="swift_button size_small roud" hover-class="swift_button_hover" bindtap="jumpToRecharge">充值</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="enough_balance" wx:else>
+    <view class="scan_number">{{card.ottCode || ''}}</view>
+    <view class="scan_barcode">
+        <!--
+        <image src="{{barcodeUrl}}"></image>
+        -->
+        <canvas canvas-id="barcode" />
+    </view>
+    <view class="scan_qrcode">
+        <!--
+        <image src="{{qrcodeUrl}}"></image>
+        -->
+        <canvas canvas-id="qrcode" />
+    </view>
+    <view class="scan_card_info">
+      <List > 
+        <ListItem >
+          <view slot="left" style="color:#999999;"><text>{{card.cardName}}</text></view>
+          <view slot="right" style="color:#999999;">￥<text>{{card.balance}}</text></view>
+        </ListItem>
+      </List>
+    </view>
+  </view>
+</view>
+
+<view class="refresh_wrap">
+  <view class="btn_refresh" bindtap="handleRefreshCode"><image src="../../resource/image/refresh.png"></image></view>
+  <text>{{ loading ? '加载中' : '每分钟自动更新，请当面使用勿泄漏' }}</text>
+</view>
+
+<view class="pay_detail" bindtap="jumpToTradeList"><text>交易明细</text><image src="../../resource/image/arrow_rgt.png"></image></view>
+
+<view class="provider"><text>世明科技</text></view>

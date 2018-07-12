@@ -1,0 +1,3 @@
+/* pages/help/help.wxss */
+.help_center{padding: 30rpx;}
+.help_center .row{font-size: 28rpx; line-height: 40rpx; margin-top: 15rpx;}

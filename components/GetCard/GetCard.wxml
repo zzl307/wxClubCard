@@ -1,0 +1,17 @@
+<!--components/GetCard/GetCard.wxml-->
+<view class="wrap" hidden="{{ishidden}}">
+    <view class="getcard_wrap" bindtap="_getCardEvent">
+        <view class="icon">
+            <view class="icon_wrap"><image class="icon_img" mode="aspectFill" src="{{info.logoWx}}"></image></view>
+            <view class="card_text" hidden="{{!info.rightsDiscribe}}">
+                <text class="text">{{info.rightsDiscribe || ''}}</text>
+            </view>
+        </view>
+        <view class="card_desc">
+            <view class="title">
+                {{info.brandName || ''}}
+            </view>
+            <!-- <view class="get_btn" bindtap="_getCardEvent">领取</view> -->
+        </view>
+    </view>
+</view>

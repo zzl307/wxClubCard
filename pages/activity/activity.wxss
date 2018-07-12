@@ -1,0 +1,71 @@
+/* pages/activity.wxss */
+page{
+    height: 100%;
+}
+.activity_wrap{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #fff;
+}
+.content{
+    flex: 1;
+    padding: 76rpx 70rpx;
+}
+.content .content_wrap{
+    position: relative;
+}
+.content_bg .content_bg_img{
+    width: 610rpx;
+    height: 948rpx;
+}
+.activity_content{
+    position: absolute;
+    top:268rpx;
+    width: 100%;
+}
+.activity_item{
+    display: -webkit-box;
+}
+.activity_item .item_icon{
+    width:162rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.activity_item .item_icon .item_icon_img{
+    width: 36rpx;
+    height: 36rpx;
+}
+.activity_item .text{
+    -webkit-box-flex:1;
+    display: block;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+.activity_item .text .blue{
+    color: #5261FF;
+}
+
+.split_line_wrap{
+    display: flex;
+    align-content: center;
+    justify-content:center;
+}
+.split_line_wrap .split_line{
+    border-bottom: 2rpx solid #C0C5FF;
+    padding-bottom: 35rpx;
+    margin-bottom: 35rpx;
+    width: 60%;
+
+}
+.footer{
+    font-size: 28rpx;
+    color: #212121;
+    padding: 88rpx 36rpx 0 36rpx;
+}
+.footer_time{
+    font-size: 24rpx;
+    color: #212121;
+    padding: 18rpx 36rpx 0 36rpx;
+}

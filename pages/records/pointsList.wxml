@@ -1,0 +1,21 @@
+<view class="bg_white">
+  <view class="bg_white_title">
+    <text class="title">当前剩余积分 {{bonus.bonus || 0}}</text>
+    <text class="title_num">总消费积分  {{bonus.consumeTotalBonus || 0}}</text>
+  </view>
+  <view class="view_list" wx:for="{{bonus.dataList}}" wx:key="coupon_{{index}}">
+    <view class="view_li">
+      <view class="view_list_left">
+        <view class="left_top" wx:if="{{item.pointChangeDs == 'open_card'}}">开卡积分</view>
+        <view class="left_top" wx:elif="{{item.pointChangeDs == 'recharge_card'}}">充值积分</view>
+        <view class="left_top" wx:elif="{{item.pointChangeDs == 'consume_card'}}">消费积分</view>
+        <view class="left_top" wx:elif="{{item.pointChangeDs == 'api_open'}}">接口开卡积分</view>
+        <view class="left_top" wx:elif="{{item.pointChangeDs == 'api_recharge'}}">接口充值积分</view>
+        <view class="left_top" wx:else>-</view>
+        <view class="left_bottom">{{item.tradeTime}}</view>
+      </view>
+      <view class="view_list_right" wx:if="{{item.type == 2}}">-{{item.bonus}}</view>
+      <view class="view_list_right" wx:else>+{{item.bonus}}</view>
+    </view>
+  </view>
+</view>

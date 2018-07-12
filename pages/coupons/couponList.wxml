@@ -1,0 +1,28 @@
+<!--pages/coupons/couponList.wxml-->
+<view class="coupon_nonuse" bindtap="handleNoCouponSelect">
+  <view class="coupon_unselect_title">不使用优惠券</view>
+  <view class="coupon_unselect"><view hidden="{{useType}}"><image class="coupon_select_img" mode="aspectFill" src="../../resource/image/checked.png"></image></view></view>
+</view>
+
+<view class="coupon_list">
+  <view class="coupon_margin" wx:for="{{couponList}}" wx:key="card_{{index}}">
+    <Coupon bind:selectCouponEvent="selectCouponEvent" key="{{index}}" isCheck="{{seleCouponState}}" couponColor="{{item.couponColor}}" info="{{item}}"></Coupon>
+  </view>
+</view>
+
+<view class='use_no' wx:if="{{useNoList && useNoList.length > 0}}">
+  <text class="left"></text>
+  <text class="title">不可用的优惠券</text>
+  <text class="right"></text>
+</view>
+
+<view class="coupon_list">
+  <view class="coupon_margin" wx:for="{{useNoList}}" wx:key="card_{{item.pkid}}">
+    <Coupon couponColor="disabled" disabled="true" info="{{item}}"></Coupon>
+  </view>
+</view>
+  
+<view class='footer_btn'>
+  <button class="swift_button" hover-class="swift_button_hover" bindtap="handleSelect">确定</button>
+</view>
+

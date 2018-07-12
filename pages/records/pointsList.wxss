@@ -1,0 +1,47 @@
+/* pages/records/pointsList.wxss */
+.bg_white{
+  background: #fff;
+  height: 100%;
+  position:absolute;left:0;top:0;bottom:0;right:0;
+  
+}
+.bg_white_title{
+  background: #f8f8f8;
+  padding: 30rpx 30rpx 15rpx 30rpx;
+}
+.bg_white text{
+  font-size: 24rpx;
+  color: #999;
+  line-height: 34rpx;
+}
+.bg_white text.title_num{
+  margin-left:50rpx;
+}
+.view_list{
+  padding: 0rpx 30rpx;
+}
+.view_li{
+  display: -webkit-box;padding: 20rpx 7rpx;border-bottom: 2rpx solid #E4E4E4;
+}
+.view_list_left{
+  -webkit-box-flex: 1;text-align: left;
+}
+.view_list_right{
+  font-size: 34rpx;
+  color: #E94F4F;
+  margin: 30rpx 58rpx 0 0;
+}
+.view_list_left .left_top {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 40rpx;
+}
+.view_list_left .left_bottom{
+  font-size: 24rpx;
+  color: #999;
+  line-height: 32rpx;
+  margin-top: 6rpx;
+}
+.view_list{
+  padding: 0rpx 30rpx;background: #fff;
+}

@@ -1,0 +1,26 @@
+<!--pages/records/transactionList.wxml-->
+<view class="bg_white">
+  <view class="bg_white_title">
+    <text class="title">当前余额 ￥{{trade.cardItem.balance || '0.00'}}</text>
+    <text class="title_num">累计消费金额  ￥{{trade.cardItem.consumeTotal || '0.00'}}</text>
+  </view>
+  <view class="view_list" wx:for="{{trade.tradeList}}" data-id="{{item.listid}}" bindtap="jumpDetail" wx:key="card_{{index}}">
+    <view class="view_li">
+      <view class="view_list_left">
+        <view class="left_top" wx:if="{{item.type == 1}}">购卡</view>
+        <view class="left_top" wx:elif="{{item.type == 2}}">充值</view>
+        <view class="left_top" wx:elif="{{item.type == 3}}">核销</view>
+        <view class="left_top" wx:elif="{{item.type == 4}}">赠送</view>
+        <view class="left_top" wx:elif="{{item.type == 5}}">转赠开卡</view>
+        <view class="left_top" wx:elif="{{item.type == 6}}">退款开卡</view>
+        <view class="left_top" wx:elif="{{item.type == 7}}">扣款</view>
+        <view class="left_top" wx:elif="{{item.type == 8}}">第三方支付</view>
+        <view class="left_top" wx:elif="{{item.type == 9}}">线下退款</view>
+        <view class="left_top" wx:else>-</view>
+        <view class="left_bottom">{{item.tradeTimeFormat}}</view>
+      </view>
+      <view class="view_list_right" wx:if="{{item.type == 1 || item.type == 2 || item.type == 4 || item.type == 5 || item.type == 6 || item.type == 9}}">+￥{{item.tradeAmount}}</view>
+      <view class="view_list_right" wx:else>-￥{{item.tradeAmount}}</view>
+    </view>
+  </view>
+</view>

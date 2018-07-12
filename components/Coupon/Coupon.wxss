@@ -1,0 +1,184 @@
+/* components/Coupon/Coupon.wxss */
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 210rpx;
+    border-radius: 14rpx;
+}
+
+.coupon-background-red{
+    background-image: linear-gradient(-88deg, #FA8BA7 0%, #FB8989 100%);
+}
+.coupon-background-blue{
+    background-image:  linear-gradient(-88deg, #899CF8 0%, #C8A8FB 100%);
+}
+.coupon-background-indigo{
+    background-image:  linear-gradient(-88deg, #15C5BE 0%, #77C1E9 100%);
+}
+.coupon-background-yellow{
+    background-image:  linear-gradient(-88deg, #CEF78B 0%, #E5FAAA 100%);
+}
+.coupon-background-disabled{
+    background: #C8C7C7;
+}
+
+.wrapper .disabled{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 1;
+}
+
+.wrapper .coupon {
+    position: relative;
+    display: flex;
+    color: #fff;
+}
+.wrapper .coupon .content {
+    flex: 1;
+    padding: 28rpx 30rpx;
+}
+
+.wrapper .coupon .content .desc {
+    display: block;
+    width:398rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    opacity: 0.8;
+    font-size: 24rpx;
+    letter-spacing: 1rpx;
+    margin-bottom: 8rpx;
+}
+
+.wrapper .coupon .content .title{
+    margin-bottom: 23rpx;
+}
+.wrapper .coupon .content .title .text{
+    display: inline-block;
+    font-size: 42rpx;
+    line-height: 42rpx;
+    letter-spacing: 1.75rpx;
+    margin-right: 14rpx;
+    vertical-align: middle;
+}
+.wrapper .coupon .content .title .btn{
+    display: inline-block;
+    border: 1rpx solid #fff;
+    border-radius: 100rpx;
+    padding: 4rpx 16rpx;
+    font-size: 25rpx;
+    line-height: 25rpx;
+}
+
+.time {
+    display: block;
+    opacity: 0.8;
+    font-size: 24rpx;
+    letter-spacing: 1rpx;
+}
+
+.tip {
+    position: relative;
+    flex: 0 0 183rpx;
+    text-align: center;
+    padding-right: 18rpx;
+}
+
+.split-line {
+    height: 210rpx;
+    position: relative;
+    flex: 0 0 0;
+    border-left: 2rpx dashed #fff;
+    margin: 0 10rpx;
+}
+
+.split-line:before,
+.split-line:after {
+    content: '';
+    position: absolute;
+    width: 30rpx;
+    height: 15rpx;
+    background: #fff;
+    left: -15rpx;
+    z-index: 1;
+}
+
+.split-line:before {
+    border-radius: 0 0 15rpx 15rpx;
+    top: 0;
+}
+
+.split-line:after {
+    border-radius: 15rpx 15rpx 0 0;
+    bottom: 0;
+}
+
+.border-line {
+    position: absolute;
+    height: 210rpx;
+    flex: 0 0 0;
+    right:0;
+    top:0;
+}
+
+.border-line:before,
+.border-line:after {
+    content: '';
+    position: absolute;
+    width: 16rpx;
+    height: 10rpx;
+    background: #fff;
+    left: -9rpx;
+    z-index: 1;
+}
+
+.border-line .border-circle {
+    position:absolute;
+    width:15rpx;
+    height:30rpx;
+    background:#fff;
+    top:50%;
+    transform:translateY(-50%);
+    left:-14rpx;
+    z-index:1;
+    border-radius:15rpx 0rpx 0rpx 15rpx;    
+}
+
+.border-line:before {
+    border-radius: 0 0 10rpx 10rpx;
+    top: 0;
+}
+
+.border-line:after {
+    border-radius: 10rpx 10rpx 0 0;
+    bottom: 0;
+}
+
+.tip .checkbox {
+    width: 42rpx;
+    height: 42rpx;
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    top: 18rpx;
+    right: 18rpx;
+}
+.tip .checkbox .checkbox_img{
+    width: 42rpx;
+    height: 42rpx;
+}
+.tip .money {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50rpx;
+    padding-right:18rpx;
+}
+.tip .money .money_symbol{
+    font-size: 35rpx;
+}

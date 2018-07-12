@@ -1,0 +1,52 @@
+<!--pages/records/transactionDetail.wxml-->
+<view class="list">
+  <view class="list_title">
+    <text class="title">交易详情</text>
+    <text class="title_num">{{nowMoney}}</text>
+  </view>
+  <view class="detail_bg">
+    <view class="detail_list">
+      <text class="left">交易状态</text>
+      <text class="right" wx:if="{{detail.state == 1}}">待支付</text>
+      <text class="right" wx:elif="{{detail.state == 2}}">支付成功</text>
+      <text class="right" wx:elif="{{detail.state == 3}}">支付失败</text>
+      <text class="right" wx:elif="{{detail.state == 4}}">交易成功</text>
+      <text class="right" wx:elif="{{detail.state == 5}}">交易失败</text>
+      <text class="right" wx:elif="{{detail.state == 6}}">废弃</text>
+      <text class="right" wx:else>{{tranState}}</text>
+    </view>
+    <view class="detail_list">
+      <text class="left">会员卡号</text>
+      <text class="right">{{detail.cardId}}</text>
+    </view>
+    <view class="detail_list">
+      <text class="left">交易时间</text>
+      <text class="right">{{detail.tradeTimeFormat}}</text>
+    </view>
+    <view class="detail_list">
+      <text class="left">订单来源</text>
+      <text class="right" wx:if="{{detail.type == 1}}">购卡</text>
+      <text class="right" wx:elif="{{detail.type == 2}}">充值</text>
+      <text class="right" wx:elif="{{detail.type == 3}}">核销</text>
+      <text class="right" wx:elif="{{detail.type == 4}}">赠送</text>
+      <text class="right" wx:elif="{{detail.type == 5}}">转赠开卡</text>
+      <text class="right" wx:elif="{{detail.type == 6}}">退款开卡</text>
+      <text class="right" wx:elif="{{detail.type == 7}}">扣款</text>
+      <text class="right" wx:elif="{{detail.type == 8}}">第三方支付</text>
+      <text class="right" wx:elif="{{detail.type == 9}}">线下退款</text>
+      <text class="right" wx:else>-</text>
+    </view>
+    <view class="detail_list">
+      <text class="left">订单号</text>
+      <text class="right">{{detail.posOutTradeNo}}</text>
+    </view>
+    <view class="detail_list">
+      <text class="left">支付金额</text>
+      <text class="right">￥{{detail.payAmount}}</text>
+    </view>
+    <view class="detail_list">
+      <text class="left">交易金额</text>
+      <text class="right">￥{{detail.tradeAmount}}</text>
+    </view>
+  </view>
+</view>

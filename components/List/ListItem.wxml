@@ -1,0 +1,8 @@
+<!--components/List/ListItem.wxml-->
+<view class="swift_list_item {{bottomline?'bottom_line':''}}" hidden="{{hidden}}">
+  <view class="swift_list_item_left"><slot name="left"></slot></view>
+  <view class="swift_list_item_right"><slot name="right"></slot></view>
+  <view class="swift_list_arrow" wx:if="{{arrow}}">
+    <image class="arrow_right" wx:if="{{arrow==='right'}}" mode="aspectFill" src="../../resource/image/arrow_right.png"></image>
+  </view>
+</view>

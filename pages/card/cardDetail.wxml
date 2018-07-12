@@ -1,0 +1,94 @@
+<!--原01-会员卡首页合并到这里 pages/card/newMember.wxml-->
+<block wx:if="{{newUser===true}}">
+  <view class='blue_bg_new'></view>
+  <view class='card_wrap_new'>
+    <image class='card' src='../../resource/image/card_img.png'></image>
+    <view class='customer_info_new'>
+      <view class='logo'><image src='{{card.logoUrl}}'></image></view>
+      <text>{{card.brandName}}</text>
+    </view>
+    <view class='index_btn_wrap'>
+      <button class="swift_button size_small roud w250" hover-class="swift_button_hover" bindtap='handleRecieveCardClick'>获取会员卡</button>
+    </view>
+  </view>
+
+  <view class='card_intro'>
+    <view class='intro_title'>
+      <view class='line'></view><text>会员福利</text><view class='line'></view>
+    </view>
+    <view class='intro_con' wx:for='{{card.rights}}' wx:key='{{item.pkid}}'>
+      <view class='row'>{{item.content}}</view>
+    </view>
+    <view class='intro_title mt56'>
+      <view class='line'></view><text>使用须知</text><view class='line'></view>
+    </view>
+    <view class='intro_con mt56'>
+      <view class='row'>{{card.describe}}</view>
+    </view>
+  </view>
+
+  <view class='help_center'>
+    <navigator url='/pages/help/help'>帮助中心</navigator>
+  </view>
+
+</block>
+
+<!--pages/card/cardDetail.wxml-->
+<block wx:else>
+  <view class='blue_bg'>
+    <view class='card_wrap'>
+      <image class='card' src='../../resource/image/card_img.png'></image>
+      <view class='customer_info'>
+        <view class='logo'><image src='{{userCard.logo}}'></image></view>
+        <text>{{userCard.brandName}}</text>
+        <view class='nav_wrap'>
+          <navigator url='/pages/memberShip/myVip?spid={{userCard.spid}}'>查看会员权益<text>></text></navigator>
+        </view>
+      </view>
+      <view class='index_btn_wrap'>
+        <button class="swift_button size_small roud w250" hover-class="swift_button_hover" data-id="{{userCard.cardId}}" bindtap='handleCardClick'>我的会员卡</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='member_info'>
+    <view class='item item1'>
+      <view class='item_top'>{{userCard.bonus}}</view>
+      <view class='item_btm'>积分</view>
+    </view>
+    <view class='split'></view>
+    <view class='item item2'>
+      <view class='item_top'>{{userCard.balance}}元</view>
+      <view class='item_btm'>余额</view>
+    </view>
+    <view class='split'></view>
+    <view class='item'>
+      <view class='item_top'>{{userCard.levelName}}</view>
+      <view class='item_btm'>等级<text>V{{userCard.level || 0}}</text></view>
+    </view>
+  </view>
+
+  <view class='member_service'>
+    <navigator class='item' url='/pages/topup/topup?spid={{userCard.spid}}&cardId={{userCard.cardId}}'>
+      <image mode='aspectFit' src='../../resource/image/service_ico1.png'></image>
+      <view>充值</view>
+    </navigator>
+    <navigator class='item' url='/pages/records/transactionList?spid={{userCard.spid}}&cardId={{userCard.cardId}}'>
+      <image mode='aspectFit' src='../../resource/image/service_ico2.png'></image>
+      <view>交易记录</view>
+    </navigator>
+    <navigator class='item' url='/pages/coupons/couponListViewOnly?spid={{userCard.spid}}&cardId={{userCard.cardId}}'>
+      <image mode='aspectFit' src='../../resource/image/service_ico3.png'></image>
+      <view>优惠券</view>
+    </navigator>
+    <navigator class='item' url='/pages/records/pointsList?spid={{userCard.spid}}&cardId={{userCard.cardId}}'>
+      <image mode='aspectFit' src='../../resource/image/service_ico4.png'></image>
+      <view>积分记录</view>
+    </navigator>
+  </view>
+
+  <view class='help_center'>
+    <navigator url='/pages/help/help'>帮助中心</navigator>
+  </view>
+</block>
+

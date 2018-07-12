@@ -1,0 +1,4 @@
+/* pages/topup/topupDiscounts.wxss */
+.item_desc{
+    color:#B2B2B2;
+}

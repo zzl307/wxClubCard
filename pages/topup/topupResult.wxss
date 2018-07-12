@@ -1,0 +1,11 @@
+/* pages/topup/topupResult.wxss */
+.result_top{padding-top:60rpx;text-align:center;background: #fff;}
+.result_top .result_top_icon .result_top_icon_img{width: 90rpx;height: 88rpx;}
+.result_top .result_top_msg{font-size:32rpx;margin-top:14rpx;}
+/* .result_bottom{margin-top:40rpx;padding:0 30rpx;}*/
+.amount_transfer{color:#E94F4F;margin:0 5rpx 0 20rpx;}
+.amount_padin{font-size:32rpx;color:#3B4AFF;margin:0 5rpx 0 20rpx;}
+.amount_text{color: #000;}
+.get_coupon{font-size:28rpx;background: #fff;text-align: center;padding:250rpx 0 40rpx 0;}
+.get_coupon .get_blue_text{color: #4757FF;}
+.result_bottom{position:absolute;bottom:60rpx;left:0;right:0;padding:0 30rpx;}
